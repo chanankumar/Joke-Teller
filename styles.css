@@ -1,0 +1,67 @@
+@keyframes changeButtonColor {
+    from{background-color: white;color: black;}
+    to{background-color: blue;color: white;}
+}
+@keyframes changeButtonColorNormal {
+    to{background-color: white;color: black;}
+}
+
+
+
+html{
+    box-sizing: border-box;
+}
+
+body{
+    background: url("robot.gif");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: left center;
+    background-color: #45badd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button{
+    width: 10vw;
+    height: 7vh;
+    background-color: white;
+    border-color: black;
+    box-shadow: 1px 2px black;
+    font-family : Arial, Helvetica, sans-serif;
+    font-size: 1.2vw;
+    background-position: right bottom;  
+    animation: changeButtonColorNormal 1s;
+}
+button:default { 
+    background-color: red;
+}
+button:hover{
+    animation: changeButtonColor 1s forwards;
+}
+button:active{
+    transform:scale(0.8,0.8);
+    box-shadow: none;
+}
+
+button:disabled{
+    background-color: gray !important;
+    color: rgb(194, 189, 189) !important;
+}
+
+@media only screen and (max-width: 700px) {
+    button {
+        width: 20vw;
+        height: 10vh;
+        font-size: 1rem;
+    }
+  }
+
+  @media only screen and (max-width: 300px) {
+    button {
+        width: 20vw;
+        height: 15vh;
+        font-size: 1rem;
+    }
+  }
