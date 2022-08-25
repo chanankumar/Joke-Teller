@@ -1,3 +1,5 @@
+import API_KEY from './apikey.js';
+
 const audioElement = document.getElementById('audio')
 const button = document.getElementById('tellJoke')
 
@@ -5,7 +7,7 @@ const VoiceRSS={speech(e){this._validate(e),this._request(e)},_validate(e){if(!e
 
 function tellMe(joke) {
     VoiceRSS.speech({
-      key: 'db8e2969cdd74106922676e7ed380bc2',
+      key: API_KEY,
       src: joke,
       hl: 'en-us',
       r: 0,
@@ -14,7 +16,7 @@ function tellMe(joke) {
       ssml: false,
     });
 }
-0
+
 async function getJoke(){
     let joke;
     try{
@@ -32,7 +34,8 @@ async function getJoke(){
         console.log(error)
     }
     
-}
+}window.getJoke = getJoke
+
 
 function toggleButton(){
     button.disabled = !button.disabled;
